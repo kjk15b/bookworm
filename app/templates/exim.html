@@ -1,0 +1,19 @@
+{%extends "index.html" %}
+{%block content%}
+<div class="hipsum">
+    <h3>Upload to the Database</h3>
+    <form action="/api/database/import" method="post" enctype="multipart/form-data">
+        <label for="dbfile">Upload a JSON Database Snapshot</label>
+        <input type="file" id="dbfile" name="dbfile" accept="json">
+        <input type="submit" value="Upload">
+    </form>
+</div>
+<br>
+<div class="hipsum">
+    <h3>Retrieve Database</h3>
+    <form action="/api/database/export" method="get">
+        <input type="submit" value="Export">
+    </form>
+</div>
+
+{% endblock %}
